@@ -44,27 +44,30 @@ date_0 = """73167176531330624919225119674426574742355349194934
 71636269561882670428252483600823257530420752963450"""
 # 干掉有零的分片，把没有的做乘再比较
 
-date = date_0.replace('/n',None)
+date = []
+for a in date_0.split():     #去回车，重整数据为 整数 然放入一个列表date
+    for b in a :
+        date.append(int(b))
 
-def chengji(list_nozreo):       # 无零做乘积
+def chengji(list):       # 给出分片做乘积
     num = 1
-    for i in list_nozreo:
-        num *= int(i)
+    for i in list:
+        num *= i
     return  num
 
-def find_zero(list_date):       # 找零,无零回 True, 有零False
-    for j in list_date :
-        if int(j) == 0 :
+def find_zero(list):       # 找零,无零回 True, 有零False
+    for j in list :
+        if j == 0 :
             return False
     return  True
 
 aw = 1
-for k in range(0, len(date)-12):
+for k in range(0, len(date)-13):
     list_pian = []
-    for n in date[k: ( k + 13)] :
-        list_pian.append(int(n))
+    for n in date[k: ( k + 13)] :       # 分片
+        list_pian.append(n)
         if find_zero(list_pian) :  # 无零做积
             m = chengji(list_pian)
             if m > aw:
                 aw = m
-print(aw)
+print("答案是： " + str(aw))
