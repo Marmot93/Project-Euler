@@ -44,3 +44,26 @@ date = """08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 20 69 36 41 72 30 23 88 34 62 99 69 82 67 59 85 74 04 36 16
 20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54
 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48"""
+
+
+date_nospac = list(date.split())     # 列表化，去空格
+
+date_int = []
+for i in date_nospac :       #换int
+    date_int.append(int(i))
+
+list = []
+for j in range(20):       # 分片装入list
+    list.append(date_int[j * 20 :(j + 1) * 20])
+
+# n m 坐标定位
+num = 0
+for m in  range(16):
+    for n in range(16):
+        x1 = list[m][n] * list[m + 1][n + 1] * list[m + 2][n + 2] * list[m + 3][n + 3]  # 右斜
+        x2 = list[m][n + 3] * list[m + 1][n + 2] * list[m + 2][n + 1] * list[m + 3][n]  # 左斜
+        if x1 > num :
+            num = x1
+        if x2 > num:
+            num = x2
+print("答案是： " + str(num))
