@@ -60,10 +60,18 @@ for j in range(20):       # 分片装入list
 num = 0
 for m in  range(16):
     for n in range(16):
-        x1 = list[m][n] * list[m + 1][n + 1] * list[m + 2][n + 2] * list[m + 3][n + 3]  # 右斜
-        x2 = list[m][n + 3] * list[m + 1][n + 2] * list[m + 2][n + 1] * list[m + 3][n]  # 左斜
+        x1 = list[m][n] * list[m + 1][n + 1] * list[m + 2][n + 2] * list[m + 3][n + 3]  # 右
+        x2 = list[m][n + 3] * list[m + 1][n + 2] * list[m + 2][n + 1] * list[m + 3][n]  # 左
         if x1 > num :
             num = x1
         if x2 > num:
             num = x2
+for q in range(16):
+    x3 = list[q][q] * list[q][q + 1] * list[q][q + 2] * list[q][q + 3]      # 横
+    x4 = list[q][q] * list[q + 1][q] * list[q + 2][q] * list[q + 3][q]      # 竖
+    if x3 > num:
+        num = x1
+    if x4 > num:
+        num = x2
+end = time.time()
 print("答案是： " + str(num))
