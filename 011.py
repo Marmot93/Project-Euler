@@ -73,5 +73,5 @@ for q in range(16):
         num = x1
     if x4 > num:
         num = x2
-end = time.time()
+
 print("答案是： " + str(num))
