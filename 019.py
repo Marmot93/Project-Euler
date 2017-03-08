@@ -27,4 +27,4 @@ for year in range(1901, 2001):
         start_day += days % 7
         start_day = start_day % 7
 
-print('答案是： '+ 'count')
+print('答案是： '+ str(count))
