@@ -18,4 +18,4 @@ for i in range(1,10000):
         sum_num +=  i
         print(i, end="/")
 print('')
-print('答案为： ' +str(sum_num))
+print('亲和数和为： ' +str(sum_num))
