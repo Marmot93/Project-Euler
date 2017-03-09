@@ -5,7 +5,7 @@ print("""例如 220 的真因子是 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 和 110; 
 def d(n):
     num = 0
     # 真因子不算自己
-    for i in range(1,n):
+    for i in range(1,int(n/2)+1):
         if n % i == 0 :
             num += i
     return num
