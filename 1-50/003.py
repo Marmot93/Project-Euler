@@ -13,7 +13,6 @@ def zhiyinzi(x):
             zhiyinzi = i           # 得到最大质因子
         else:
             i += 1                  # 除不尽就 +1
-
     return  zhiyinzi
 
 print("答案是： " + str(zhiyinzi(600851475143)))
