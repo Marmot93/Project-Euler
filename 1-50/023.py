@@ -23,4 +23,4 @@ sum_num = 0
 for i in range(1,28124):
     if not i in add_two:
         sum_num +=i
-print(sum_num)
+print('答案是：' + str(sum_num))
