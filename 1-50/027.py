@@ -24,4 +24,4 @@ for b in primes:
             max_len = n
             ji = a*b
 
-print(ji)
+print('答案是： ' + str(ji))
