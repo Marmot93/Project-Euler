@@ -6,7 +6,7 @@ count = 2
 while (True):
     n = list_feb[-1] + list_feb[-2]
     if len(str(n)) == 1000:
-        print(count+1)      #循环到这个的时候break但是计数还是得+1
+        print('答案是：' + str(count + 1))      #循环到这个的时候break但是计数还是得+1
         break
     else:
         list_feb.append(n)
