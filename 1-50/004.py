@@ -20,3 +20,14 @@ print("""
 ------------------------------------------------""")
 num = (max([i*j for i in range(100,1000) for j in range(100,1000) if str(i*j) == str(i*j)[::-1]]))
 print("答案是： " + str(num))
+
+
+print("""
+方法三：filter筛选
+------------------------------------------------""")
+def is_palindrome(n):
+    return str(n) == str(n)[::-1]
+
+
+output = filter(is_palindrome, [x * y for x in range(100, 1000) for y in range(100, 1000)])
+print(max(list(output)))
