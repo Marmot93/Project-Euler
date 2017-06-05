@@ -1,11 +1,11 @@
-print("""问题：求1000000以下的起始数字中，使克拉茨序列最长的那个。'
+"""问题：求1000000以下的起始数字中，使克拉茨序列最长的那个。'
     n → n/2 (n 是偶数)
-    n → 3n + 1 (n 是奇数)""")
+    n → 3n + 1 (n 是奇数)"""
 
 
 # 长度函数
 def length(num):
-    count = 0       #计数
+    count = 0  # 计数
     while num != 1:
         if num % 2 == 0:
             num //= 2
@@ -14,8 +14,7 @@ def length(num):
             num = (num * 3) + 1
             count += 1
 
-    return int(count+1)
-
+    return int(count + 1)
 
 
 i = 500000
@@ -32,5 +31,5 @@ while i <= 1000000:
 #         max_len = length(i)
 #         max_num = i
 
-print('答案是：'+ str(max_num) , end='\n'
-                                 '长度是： '+str(max_len))
+print('答案是：' + str(max_num), end='\n'
+                                 '长度是： ' + str(max_len))

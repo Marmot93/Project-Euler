@@ -1,4 +1,4 @@
-print("""在以下这个 20×20 的网格中，四个处于同一对角线上的相邻数字用红色标了出来：
+"""在以下这个 20×20 的网格中，四个处于同一对角线上的相邻数字用红色标了出来：
 08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00
 81 49 31 73 55 79 14 29 93 71 40 67 53 88 30 03 49 13 36 65
@@ -22,7 +22,7 @@ print("""在以下这个 20×20 的网格中，四个处于同一对角线上的
 
 这四个数字的乘积是：26 × 63 × 78 × 14 = 1788696。
 在这个 20×20 网格中，处于任何方向上（上，下，左，右或者对角线）的四个相邻数字的乘积的最大值是多少？
- ----------------------------------------------------------------""")
+"""
 
 date = """08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00
@@ -45,30 +45,29 @@ date = """08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54
 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48"""
 
-
-date_nospac = list(date.split())     # 列表化，去空格
+date_nospac = list(date.split())  # 列表化，去空格
 
 date_int = []
-for i in date_nospac :       #换int
+for i in date_nospac:  # 换int
     date_int.append(int(i))
 
 list = []
-for j in range(20):       # 分片装入list
-    list.append(date_int[j * 20 :(j + 1) * 20])
+for j in range(20):  # 分片装入list
+    list.append(date_int[j * 20:(j + 1) * 20])
 
 # n m 坐标定位
 num = 0
-for m in  range(16):
+for m in range(16):
     for n in range(16):
         x1 = list[m][n] * list[m + 1][n + 1] * list[m + 2][n + 2] * list[m + 3][n + 3]  # 右
         x2 = list[m][n + 3] * list[m + 1][n + 2] * list[m + 2][n + 1] * list[m + 3][n]  # 左
-        if x1 > num :
+        if x1 > num:
             num = x1
         if x2 > num:
             num = x2
 for q in range(16):
-    x3 = list[q][q] * list[q][q + 1] * list[q][q + 2] * list[q][q + 3]      # 横
-    x4 = list[q][q] * list[q + 1][q] * list[q + 2][q] * list[q + 3][q]      # 竖
+    x3 = list[q][q] * list[q][q + 1] * list[q][q + 2] * list[q][q + 3]  # 横
+    x4 = list[q][q] * list[q + 1][q] * list[q + 2][q] * list[q + 3][q]  # 竖
     if x3 > num:
         num = x1
     if x4 > num:
