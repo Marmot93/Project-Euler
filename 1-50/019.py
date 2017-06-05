@@ -1,7 +1,7 @@
-print("""20 世纪（1901 年 1 月 1 日到 2000 年 12 月 31 日）一共有多少个星期日落在了当月的第一天？""")
+"""20 世纪（1901 年 1 月 1 日到 2000 年 12 月 31 日）一共有多少个星期日落在了当月的第一天？"""
 
 
-def days_in_year(year):     # 每年的天数
+def days_in_year(year):  # 每年的天数
     days = 365
     if year % 4 == 0 and year % 100 != 0:
         days += 1
@@ -27,4 +27,4 @@ for year in range(1901, 2001):
         start_day += days % 7
         start_day = start_day % 7
 
-print('答案是： '+ str(count))
+print('答案是： ' + str(count))

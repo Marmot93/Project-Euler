@@ -1,4 +1,4 @@
-print("""找出从以下三角形的顶端走到底端的最大总和：""")
+"""找出从以下三角形的顶端走到底端的最大总和："""
 
 data = """75
 95 64
@@ -19,11 +19,12 @@ data = """75
 data_list = [i.split(' ') for i in data.split('\n')]  # 数据清洗
 
 # 从倒数第二排开始加后一排，取最大的那个，构成新数列
-for i in range(len(data_list) - 2, -1, -1):     # 取倒数第二排
-    for j in range(len(data_list[i])):      # 遍历最后一排
+for i in range(len(data_list) - 2, -1, -1):  # 取倒数第二排
+    for j in range(len(data_list[i])):  # 遍历最后一排
         # max（加自己下面 ，和右下边那个）
-        data_list[i][j] = max(int(data_list[i][j]) + int(data_list[i + 1][j]), int(data_list[i][j]) + int(data_list[i + 1][j + 1]))
+        data_list[i][j] = max(int(data_list[i][j]) + int(data_list[i + 1][j]),
+                              int(data_list[i][j]) + int(data_list[i + 1][j + 1]))
 
-    # print(max( data_list[i] ))
+        # print(max( data_list[i] ))
 
-print('答案是：' + str( data_list[0][0] ) )
+print('答案是：' + str(data_list[0][0]))
