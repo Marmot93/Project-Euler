@@ -17,7 +17,7 @@ aw = 0
 for x in list_feb:
     if x % 2 == 0:
         aw += x
-print('-' * 20, '方法一，循环')
+print("{:-^20}".format('方法一，循环'))
 print("答案是： " + str(aw))
 print("PS小于四百万的斐波拉契数列列表为：" + str(list_feb))
 
@@ -47,5 +47,20 @@ while fib2(n) <= 4000000:
 
 dif = time.time() - start
 # 时间精确到小数点后10为
-print('-' * 20, '方法二，递归')
+print("{:-^20}".format('方法二，循环优化'))
 print('答案是：', sum_num, '用时%10f' % dif)
+
+
+def f():
+    x = 1
+    y = 2
+    _sum = 0
+    while x < 4e6:
+        if x % 2 == 0:
+            _sum += x
+        x, y = y, x + y
+    return _sum
+
+
+print("{:-^20}".format('方法三，换位直接加'))
+print("答案是：", f())
